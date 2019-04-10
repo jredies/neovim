@@ -11,10 +11,16 @@ set nofoldenable
 set number
 
 " Clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Encoding
 set encoding=utf-8
 
 set number
 set relativenumber
+
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:ultisnips_python_style="google"

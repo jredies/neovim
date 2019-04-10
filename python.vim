@@ -11,8 +11,17 @@ let g:autopep8_max_line_length=119
 "let g:syntastic_mode = 'activate'
 "let g:syntastic_python_flake8_args = "--ignore=E301,E302,E303,E501,W391,E122,E127"
 
-let b:ale_linters = ['flake8', 'pylint']
-let b:ale_fixers = ['autopep8', 'yapf']
+let g:ale_linters = {
+  \ 'python': ['flake8'] ,
+  \ }
+
+let g:neoformat_enabled_python = ['black']
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre *.py undojoin | Neoformat
+augroup END
+
 let g:airline#extensions#ale#enabled = 1
 
 let g:jedi#completions_enabled = 0
